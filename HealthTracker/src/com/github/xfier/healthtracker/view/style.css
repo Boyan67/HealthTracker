@@ -1,0 +1,31 @@
+.root {
+    -fx-background-color: #F5F5F5;
+    -fx-font-family: Verdana;
+}
+
+#navBar{
+    -fx-background-color: #00199A;
+}
+
+#navBar .button{
+    -fx-background-color: none;
+    -fx-font-weight: 800;
+    -fx-padding: 5px;
+}
+#navBar .button:pressed, .toggle-button:selected {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.button{
+    -fx-background-color: #2546F3;
+    -fx-text-fill: white;
+}
+
+.progress-bar .bar {
+    -fx-background-color: #2546F3;
+}
+
+.label-headings{
+    -fx-text-fill: #00199A;
+}

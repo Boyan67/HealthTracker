@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="593.0" prefWidth="753.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.xfier.healthtracker.controller.GroupController">
+    <top>
+        <HBox fx:id="navBar" prefHeight="0.0" prefWidth="600.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="Home" mnemonicParsing="false" onAction="#HomeButtonPushed" prefWidth="70.0" text="Home" />
+                <Button fx:id="Profile" mnemonicParsing="false" onAction="#ProfileButtonPushed" prefWidth="70.0" text="Profile" />
+                <Button fx:id="Exercise" mnemonicParsing="false" onAction="#ExerciseButtonPushed" prefWidth="70.0" text="Exercise" />
+                <Button fx:id="Diet" mnemonicParsing="false" onAction="#DietButtonPushed" prefWidth="70.0" text="Diet" />
+                <Button fx:id="Groups" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-color: rgb(0,0,0,0.2);" text="Groups" />
+                <Button fx:id="Goals" mnemonicParsing="false" onAction="#GoalsButtonPushed" prefWidth="70.0" text="Goals" />
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </HBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                        <TextField editable="false" layoutX="22.0" layoutY="14.0" prefHeight="30.0" prefWidth="102.0" text="Your Groups">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </TextField>
+                        <TableView fx:id="MyGroups" layoutX="22.0" layoutY="53.0" prefHeight="205.0" prefWidth="482.0">
+                            <columns>
+                                <TableColumn fx:id="groupNameColumn" prefWidth="274.4000663757324" text="Group Name" />
+                                <TableColumn fx:id="group_leader" prefWidth="207.199951171875" text="Leader" />
+                            </columns>
+                        </TableView>
+                  <Button layoutX="602.0" layoutY="80.0" mnemonicParsing="false" onAction="#CreateGroupPushed" prefHeight="30.0" prefWidth="107.0" text="Create Group">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="GroupName" layoutX="553.0" layoutY="44.0" />
+                  <Label layoutX="555.0" layoutY="21.0" text="Group Name" />
+                    </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <TextField editable="false" layoutX="22.0" layoutY="14.0" prefHeight="30.0" prefWidth="93.0" text="All Groups">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </TextField>
+                  <TableView fx:id="AllGroups" layoutX="22.0" layoutY="53.0" prefHeight="204.0" prefWidth="482.0">
+                    <columns>
+                      <TableColumn prefWidth="129.60000228881836" text="Group ID" />
+                      <TableColumn prefWidth="178.3999786376953" text="Group Name" />
+                        <TableColumn prefWidth="175.99993896484375" text="Leader" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="522.0" layoutY="53.0" mnemonicParsing="false" onAction="#ViewSelectedPushed" prefHeight="30.0" prefWidth="107.0" text="View Selected">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="522.0" layoutY="104.0" mnemonicParsing="false" onAction="#JoinSelectedPushed" prefHeight="30.0" prefWidth="107.0" text="Join Selected">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+            </items>
+        </SplitPane>
+    </center>
+</BorderPane>

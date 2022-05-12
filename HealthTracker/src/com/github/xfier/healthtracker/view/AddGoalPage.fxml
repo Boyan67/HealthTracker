@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.xfier.healthtracker.controller.AddGoalPageController">
+    <top>
+        <Label text="Add Goal" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="System Bold" size="25.0" />
+            </font>
+            <BorderPane.margin>
+                <Insets top="20.0" />
+            </BorderPane.margin>
+        </Label>
+    </top>
+    <bottom>
+        <HBox prefHeight="63.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets left="20.0" right="20.0" />
+            </padding>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox prefHeight="313.0" prefWidth="560.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="41.0" prefWidth="200.0">
+               <children>
+                  <ChoiceBox fx:id="GoalType" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin></ChoiceBox>
+                  <TextField fx:id="GoalValue" prefHeight="23.0" prefWidth="112.0" promptText="Goal Value">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <DatePicker fx:id="GoalDate" promptText="End Date">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin></DatePicker>
+                  <Button mnemonicParsing="false" onAction="#SetGoalPushed" text="Set Goal" />
+               </children>
+                </HBox>
+            <TextArea fx:id="GoalDescription" prefHeight="245.0" prefWidth="560.0" promptText="Goal Descripton...." />
+
+            </children>
+            <BorderPane.margin>
+                <Insets left="20.0" right="20.0" />
+            </BorderPane.margin>
+        </VBox>
+    </center>
+</BorderPane>

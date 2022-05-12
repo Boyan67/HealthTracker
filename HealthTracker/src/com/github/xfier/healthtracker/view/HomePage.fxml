@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.xfier.healthtracker.controller.HomeController">
+    <top>
+        <HBox fx:id="navBar" prefHeight="0.0" prefWidth="600.0" spacing="5.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="Home" mnemonicParsing="false" prefWidth="70.0" style="-fx-background-color: rgb(0,0,0,0.2);" text="Home" />
+                <Button fx:id="Profile" mnemonicParsing="false" onAction="#ProfileButtonPushed" prefWidth="70.0" text="Profile" />
+                <Button fx:id="Exercise" mnemonicParsing="false" onAction="#ExerciseButtonPushed" prefWidth="70.0" text="Exercise" />
+                <Button fx:id="Diet" mnemonicParsing="false" onAction="#DietButtonPushed" prefWidth="70.0" text="Diet" />
+                <Button fx:id="Groups" mnemonicParsing="false" onAction="#GroupButtonPushed" prefWidth="70.0" text="Groups" />
+                <Button fx:id="Goals" mnemonicParsing="false" onAction="#GoalsButtonPushed" prefWidth="70.0" text="Goals" />
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+        </HBox>
+    </top>
+   <left>
+      <VBox prefHeight="655.0" prefWidth="81.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="nameLabel" layoutX="27.0" layoutY="92.0" text="Label" />
+               </children></Pane>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+        <VBox prefHeight="655.0" prefWidth="724.0" BorderPane.alignment="CENTER">
+            <children>
+            <HBox prefHeight="499.0" prefWidth="841.0">
+               <children>
+                  <Pane prefHeight="499.0" prefWidth="131.0" />
+                      <Pane fx:id="barChartPane" maxHeight="481.0" maxWidth="505.0" prefHeight="473.0" prefWidth="505.0" />
+               </children>
+            </HBox>
+                <Label text="PROGRESS TO GOAL WEIGHT">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="300.0" top="10.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox alignment="CENTER" prefHeight="59.0" prefWidth="527.0">
+                    <children>
+                        <Label fx:id="lblCurrentWeight" text="00">
+                            <HBox.margin>
+                                <Insets right="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <ProgressBar fx:id="progressBar" prefHeight="59.0" prefWidth="426.0" progress="0.68" />
+                        <Label fx:id="lblGoalWeight" text="00">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                  <Pane prefHeight="59.0" prefWidth="101.0" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+   </center>
+</BorderPane>
